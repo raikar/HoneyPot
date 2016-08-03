@@ -12,7 +12,7 @@ def getInput():
 			continue
 		else:
 			if (port < 1) or (port > 65535):
-				print 'Error: Invalid port number.'
+				print 'Error: Invalid port number,please specify correct port number'
 				continue
 			else:
 				return (host, port, motd)
@@ -24,7 +24,7 @@ def writeLog(client, data=''):
 	fopen.close()
 
 def main(host, port, motd):
-	print 'Starting honeypot!'
+	print 'Starting honeypot....'
 	s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 	s.bind((host, port))
 	s.listen(100)
